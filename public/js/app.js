@@ -12,7 +12,6 @@ const messageTwo = document.querySelector('#message-2')
 
 const weatherImg = document.querySelector('#weather-icon')
 
-messageOne.textContent = 'from javascript'
 
 // Goal: Render content to paragraphs
 
