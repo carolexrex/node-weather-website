@@ -68,10 +68,12 @@ app.get('/weather', (req, res) => {
                     error
                 })
             }
+            console.log(forecastData.forecastImage)
             res.send ({
                 location,
-                forecast: forecastData,
-                address: req.query.address
+                forecast: forecastData.forecastString,
+                address: req.query.address,
+                imgAddress: forecastData.forecastImage
             })
         })
        })

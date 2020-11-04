@@ -10,6 +10,8 @@ const searchElement = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
 
+const weatherImg = document.querySelector('#weather-icon')
+
 messageOne.textContent = 'from javascript'
 
 // Goal: Render content to paragraphs
@@ -35,8 +37,13 @@ weatherForm.addEventListener('submit', (e) => {
             messageTwo.textContent = data.error
         }
         else {
+            const img = document.createElement('img')
+            img.classList.add('weather-image')
+            img.src = data.imgAddress
             messageOne.textContent = data.location
+            messageOne.appendChild(img)
             messageTwo.textContent = data.forecast
+            //weatherImg.src = data.imgAddress
         }    
     })
 })
